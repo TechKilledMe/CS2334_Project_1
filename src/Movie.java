@@ -60,4 +60,5 @@ public class Movie {
 	public String getReleaseFormat() {
 		//TODO fixme
 	}
+	//Does this still work
 }
