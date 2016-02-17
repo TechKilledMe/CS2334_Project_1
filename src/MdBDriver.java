@@ -89,9 +89,27 @@ public class MdBDriver {
 		
 		//Use string split to parse fileData
 		for (int i = 0; i < fileData.size(); i++) {
+			String tempString = fileData.get(i);
 			
+			//Splits at an opening parenthesis
+			String pattern = "\\(";
+			String[] splitData = tempString.split(pattern);
+			
+			//Sets the first index of the split array as the title
+			String parsedMovieTitle = splitData[0];
+			
+			
+			//Removes the closing parenthesis from the date.
+			String movieDate = splitData[1];
+			movieDate.replaceAll("\\)", "");
+			movieDate.trim();
+			String parsedMovieDate = movieDate;
+			
+			//Removes closing parenthesis and anything after.
+			String releaseFormat = splitData[2];
+			releaseFormat.replaceAll("\\)\\d","");
 		}
-		//Test 3
+		
 	}
 
 }
