@@ -107,6 +107,7 @@ public class MdBDriver {
 			
 			//Removes closing parenthesis and anything after.
 			String releaseFormat = splitData[2];
+			//FIXME: Needs different regex
 			releaseFormat.replaceAll("\\)\\d","");
 		}
 		
