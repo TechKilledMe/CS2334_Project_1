@@ -76,8 +76,10 @@ public class MdBDriver {
 		// TODO Fixme
 	}
 
-	public static void main(String[] args) throws IOException {
-		FileReader fr = new FileReader(filename);
+	public static void main(String[] args) throws FileNotFoundException, IOException {
+		//FIXME DO not hardcode
+		String file = "StarTrekMovies.txt";
+		FileReader fr = new FileReader(file);
 		BufferedReader br = new BufferedReader(fr);
 		
 		//Always reads first line of the file into the first index of fileData
@@ -101,14 +103,13 @@ public class MdBDriver {
 			
 			//Removes the closing parenthesis from the date.
 			String movieDate = splitData[1];
-			movieDate.replaceAll("\\)", "");
-			movieDate.trim();
-			String parsedMovieDate = movieDate;
+			String parsedMovieDate = movieDate.replaceAll("\\)", "").trim();
+			
+			 
 			
 			//Removes closing parenthesis and anything after.
 			String releaseFormat = splitData[2];
-			//FIXME: Needs different regex
-			releaseFormat.replaceAll("\\)\\d","");
+			String parsedReleaseFormat = releaseFormat.replaceAll("\\).*","").trim();
 		}
 		
 	}
