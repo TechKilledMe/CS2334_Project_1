@@ -17,24 +17,41 @@ public class Movie {
 	/**
 	 * The year of release of the movie.
 	 */
-	private int date;
+	private String date;
 	/**
 	 * The type of release the movie had.
 	 */
 	private String releaseFormat;
+	
 	/**
-	 * An ArrayList of type Movie that stores the list of movies.
+	 * Where the movie is located in the listOfMovies array.
 	 */
-	private ArrayList<Movie> listOfMovies;
+	public int index;
+	
+	
 	
 	/**
 	 * Default constructor
 	 */
 	public Movie() {
 		title = ("No Data");
-		date = 0;
+		date = "No Date";
 		releaseFormat = ("No data");
-		listOfMovies = new ArrayList<Movie>();
+		index = -1; 
+		
+	}
+	/**
+	 * Constructor that takes date from the file reader in MdBDriver
+	 * @param titleParameter Title of the movie.
+	 * @param dateParameter Date of production of movie.
+	 * @param releaseFormatParameter Release format of movie.
+	 */
+	public Movie(String titleParameter, String dateParameter, String releaseFormatParameter, int arrayIndex) {
+		title = titleParameter;
+		date = dateParameter;
+		releaseFormat = releaseFormatParameter;
+		index = arrayIndex;
+
 	}
 
 	/**
@@ -42,15 +59,15 @@ public class Movie {
 	 * @return Returns the title of the movie of type String.
 	 */
 	public String getTitle(){
-		//TODO fixme
+		return title;
 	}
 	
 	/**
 	 * Method which will return the date of release of the movie.
 	 * @return Returns the year of release of the movie in the format "YYYY" as an integer.
 	 */
-	public int getDate() {
-		//TODO fixme
+	public String getDate() {
+		return date;
 	}
 	
 	/**
@@ -58,7 +75,14 @@ public class Movie {
 	 * @return Returns the release format of the movie as type String.
 	 */
 	public String getReleaseFormat() {
-		//TODO fixme
+		return releaseFormat;
 	}
-	//Does this still work
+	
+	/**
+	 * Method which returns the index of where the movie is located in the list. 
+	 * @return Returns the index of where the movie is located in the list.
+	 */
+	public int getIndex() {
+		return index;
+	}
 }
