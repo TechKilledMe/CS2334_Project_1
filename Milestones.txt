@@ -1,0 +1,10 @@
+Milestone 1
+I met this milestone. args[0] is used as the variable for the filename.
+Milestone 2
+I met this milestone. FileReader and BufferedReader were used to read the data from the .txt file.
+Milestone 3
+I met this milestone. I created a Movie Class to store the data on the movies.
+Milestone 4
+I met this this milestone. I used a list to store the data of type Movie.
+Milestone 5
+I am unsure if I completely met this milestone. I had some errors when searching for the movie title.
